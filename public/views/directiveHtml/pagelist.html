@@ -1,0 +1,18 @@
+<div class="row">
+    <nav aria-label="Page navigation" style="text-align: center;">
+        <ul class="pagination " >
+            <li>
+                <a style="cursor: pointer" ng-click="previous()">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li ng-repeat="item in pagelist track by $index" ng-class="{active:$index==index-1}" ><a ng-click="toPage(item.name)" style="cursor: pointer" ng-bind="item.name"></a></li>
+            <li>
+                <a style="cursor: pointer" ng-click="next()">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</div>

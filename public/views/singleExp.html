@@ -1,0 +1,12 @@
+<div class="col-sm-12">
+    <h2 class="text-center">{{yao.name}}</h2>
+    <div class="text-center" ng-show="loading==false"><img src="../images/loading.gif" /></div>
+    <div class="col-sm-6" ng-repeat="item in pictures" ng-show="loading==true">
+        <img src="{{item.attributes.file._url}}" alt="图片" />
+    </div>
+    <div class="col-sm-12">
+        <p>
+            {{yao.des}}
+        </p>
+    </div>
+</div>

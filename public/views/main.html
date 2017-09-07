@@ -1,0 +1,53 @@
+<div class="container">
+    <img src="../images/main.jpg"/>
+    <div class="container projects">
+
+        <div class="projects-header page-header">
+            <h2>最近更新</h2>
+            <div class="row">
+                <p class="col-sm-9">这些都是作者从各个地方搜集而来的 如果您觉得好，请戳一下<span class="glyphicon glyphicon-hand-up " onclick="chuoyixia()"style="font-size: 50px;color: red; cursor: pointer" data-toggle="modal" data-target="#myModal"></span></p>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <img class="col-sm-6" src="../images/weixin.jpg"/>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="col-sm-3 text-right"><a ui-sref="main.allZhongYao()">所有药物...</a></p>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="text-center" ng-show="loading==false"><img src="../images/loading.gif" /></div>
+            <div class="col-sm-3 col-md-3 col-lg-3 " ng-repeat="item in lastYao track by $index" ng-show="$index<=7&&loading==true">
+                <div class="thumbnail" style="height: 420px;">
+                    <a title="当归" target="_blank">
+                        <img class="lazy" src="{{item.attributes.picture._url}}" alt="图片"/>
+                    </a>
+                    <div class="caption">
+                        <h3>
+                            <span>{{item.attributes.name}}</span>
+                            &emsp;
+                            <a ui-sref="main.singleExp({keyWord:item.attributes.name})" style="font-size: 12px;">更多信息</a>
+                        </h3>
+                        <p style="overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp: 4;-webkit-box-orient:vertical;width:220px;">
+                            {{item.attributes.des}}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
